@@ -1,0 +1,11 @@
+
+PREFIX ex: <https://example.org/wharfe/>
+
+SELECT ?impact ?component ?season ?severity
+WHERE {
+    ?impact a ex:PredictedEnvironmentalImpact ;
+            ex:environmentalComponent ?component ;
+            ex:season ?season ;
+            ex:predictedSeverity ?severity .
+}
+ORDER BY ?component ?season

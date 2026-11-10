@@ -1,0 +1,8 @@
+
+PREFIX ex: <https://example.org/wharfe/>
+
+SELECT DISTINCT ?waterbody
+WHERE {
+    ?reach ex:includesAssessedWaterBody ?waterbody .
+}
+ORDER BY ?waterbody

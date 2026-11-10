@@ -1,0 +1,9 @@
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+
+SELECT ?station (COUNT(?obs) AS ?total)
+WHERE {
+    ?obs a sosa:Observation ;
+         sosa:madeBySensor ?station .
+}
+GROUP BY ?station
+ORDER BY DESC(?total)
