@@ -1,0 +1,33 @@
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ex: <https://example.org/wharfe/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+ex:ObservationShape
+    a sh:NodeShape ;
+    sh:targetClass sosa:Observation ;
+
+    sh:property [
+        sh:path sosa:madeBySensor ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path sosa:phenomenonTime ;
+        sh:minCount 1 ;
+    ] .
+
+ex:PredictedImpactShape
+    a sh:NodeShape ;
+    sh:targetClass ex:PredictedEnvironmentalImpact ;
+
+    sh:property [
+        sh:path ex:environmentalComponent ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ex:predictedSeverity ;
+        sh:minCount 1 ;
+    ] .
